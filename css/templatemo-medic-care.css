@@ -3,12 +3,15 @@
 -----------------------------------------*/
 @font-face{
   font-family: "Cooper Black BT";
-  src: url(../fonts/Ubuntu-Bold.ttf);
+  src: url(../fonts/Cooper-Black-Regular.ttf);
 }
 
 @font-face{
   font-family: "Ubuntu";
   src: url(../fonts/Ubuntu-Light.ttf);
+}@font-face{
+  font-family: "Cooper Lt";
+  src: url(../fonts/cooper-Lt-BT-Bold.ttf);
 }
 
 
@@ -16,7 +19,7 @@
   --white-color:                  #FFFFFF;
   --primary-color:                #0c6841;  /* major text /color - Green*/
   --section-bg-color:             #1a0000; /* #F9F9F9 */
-  --dark-color:                   #660000;
+  --dark-color:                   #1a0000;
   --title-color:                  #565758;
   --p-color:                      #717275;
   --border-color:                 #eaeaea;
@@ -52,9 +55,14 @@ body {
 
 
  #anim-Text {
-  font-family: "Cooper Black BT";
-  font-size: 35px
+  font-size: 30px
 }
+
+.cooper-text{
+  font-family: "Cooper Black BT";
+}
+
+
 
 h2,
 h3,
@@ -99,7 +107,6 @@ h6 {
 .logoFont span, #doc-Title {
   color: var(--primary-color);
   border: none;
-  font-family: "Cooper Black BT";
   font-size: 26px;
   align-self: left;
 }
@@ -305,6 +312,12 @@ strong {
 -----------------------------------------*/
 /*custom modifications Frank*/
 
+
+#about-img{
+  width: 200px;
+
+}
+
 .lg_Hero{
   width: 100%;
 }
@@ -321,6 +334,7 @@ strong {
   position: relative;
   overflow: hidden;
   height: 580px;
+  
 }
 
 .heroText {
@@ -479,6 +493,12 @@ strong {
 /*---------------------------------------
   TIMELINE               
 -----------------------------------------*/
+.serviceImg{
+  width: 100%;
+  border-radius: 5px
+}
+
+
 .timeline,
 .timeline-nodes {
   position: relative;
@@ -488,6 +508,9 @@ strong {
   flex-direction: row-reverse;
 }
 
+.timeline-date p{
+  justify-content: left
+}
 .timeline h3, 
 .timeline p {
   padding: 10px 30px;
@@ -528,6 +551,8 @@ strong {
 .timeline-nodes:nth-child(even) .timeline-date {
   text-align: right;
 }
+
+
 
 .timeline-nodes:nth-child(odd) h3::after {
   content: "";
@@ -589,6 +614,15 @@ strong {
 }
 
 @media (max-width: 767px) {
+
+.timeline-date p{
+  display: none;
+}
+  .cooper-text{
+  font-family: "Cooper Lt";
+}
+
+
   .timeline-nodes:nth-child(odd) h3,
   .timeline-nodes:nth-child(odd) p {
     text-align: left;
