@@ -111,6 +111,13 @@ h6 {
   align-self: left;
 }
 
+.logoFont span{
+  font-style: bold;
+  /*text-shadow: 0 0 5px var(--dark-color) ;*/
+
+
+}
+
 
 #doc-Title{
   font-size: 30px
@@ -493,10 +500,102 @@ strong {
 /*---------------------------------------
   TIMELINE               
 -----------------------------------------*/
-.serviceImg{
-  width: 100%;
-  border-radius: 5px
+
+/*.serviceTab{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
 }
+
+.servis{
+  position: relative;
+  background-color: var(--dark-color);
+  border-radius: 15px;
+}
+
+.serviceTab img{
+  border-radius: 15px;
+  width: 100%;
+  opacity: 0.2;
+}
+
+.serviceTab h3{
+  top: calc(100% / 2);
+  left: calc(100% / 4);
+  z-index: 3;
+  position: absolute;
+}
+
+
+
+*/
+/*.all-services{
+
+}*/
+
+
+.service{
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-gap: 10px;
+}
+
+.service:nth-child(even){
+  grid-template-columns: 55% 45%;
+}
+
+.service:nth-child(even) img{
+  border-radius: 0 15px 15px 15px;
+  grid-column: 2;
+  grid-row: 1/5;
+}
+
+.service:nth-child(even) h3{
+  grid-column: 1/2;
+}
+
+.service img{
+  width: 100%;
+  border-radius: 15px 0 15px 15px;
+  order: 1;
+  grid-column: 1/2;
+  grid-row: 1/5;
+}
+
+.service h3{
+  /*border-radius: 10px;*/
+  background-color: var(--dark-color);
+  grid-column: 2 / span 1;
+  order: 2;
+  padding: 10px 15px;
+}
+
+.service p{
+  grid-row: 2;
+  order: 3;
+  /*padding: 10px 15px;*/
+}
+/*.service{
+  display: flex;
+  column-gap: 1em;
+}
+
+.service img{
+  border-radius: 10px;
+  order: 1;
+  width: 50%
+}
+
+.service h3{
+  background-color: var(--dark-color);
+  order: 2
+}
+
+.service p{
+  order: 3
+}
+*/
 
 
 .timeline,
@@ -614,6 +713,35 @@ strong {
 }
 
 @media (max-width: 767px) {
+
+  /* phone*/
+.service{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  margin: 10px 0;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}
+
+.service img{
+  order: 2;
+  border-radius: 0
+}
+
+.service h3{
+  order: 1;
+  padding:15px;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
+  background-color: var(--dark-color)
+}
+
+.service p{
+  order: 3;
+  padding: 15px;
+}
+
+/**/
 
 .timeline-date p{
   display: none;
