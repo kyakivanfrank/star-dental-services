@@ -14,6 +14,41 @@
   src: url(../fonts/cooper-Lt-BT-Bold.ttf);
 }
 
+@keyframes showup {
+  from {
+    opacity:0.2;
+    transform: translateY(20px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0px);
+  }
+}
+
+section:visited {
+  animation-name: showup;
+  /*animation-delay: 2s;*/
+  animation-duration: 3s
+
+}
+
+
+.carousel-item img{
+  transform: scale(1);
+  opacity: 0;
+  /*opacity: 0;*/
+}  
+
+
+ .active img{
+  opacity: 1;
+  /*border: 3px red solid;*/
+  transform: scale(1.2);
+  transition: transform linear 9s; 
+  backface-visibility: none;
+} 
+
+
 
 :root {
   --white-color:                  #FFFFFF;
@@ -21,7 +56,7 @@
   --section-bg-color:             #1a0000; /* #F9F9F9 */
   --dark-color:                   #1a0000;
   --title-color:                  #565758;
-  --p-color:                      #717275;
+  --p-color:                      #000000;
   --border-color:                 #eaeaea;
 
   --body-font-family:             'Ubuntu';
@@ -52,11 +87,6 @@ body {
   TYPOGRAPHY               
 -----------------------------------------*/
 
-
-
- #anim-Text {
-  font-size: 30px
-}
 
 .cooper-text{
   font-family: "Cooper Black BT";
@@ -108,7 +138,7 @@ h6 {
   color: var(--primary-color);
   border: none;
   font-size: 26px;
-  align-self: left;
+justify-content: left;
 }
 
 .logoFont span{
@@ -256,7 +286,7 @@ strong {
 }
 
 .animated-info {
-  display: inline-block;
+  display: inline;
   vertical-align: top;
   min-width: 250px;
   position: relative;
@@ -320,8 +350,15 @@ strong {
 /*custom modifications Frank*/
 
 
-#about-img{
-  width: 200px;
+#about {
+  position: relative;
+}
+#about .row img{
+  width:  27%;
+  bottom: 10%;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 1rem 2em rgba(0,0,0,.105);
 
 }
 
@@ -345,15 +382,17 @@ strong {
 }
 
 .heroText {
-  /*background: var(--white-color);*/
   background: rgba(255,255,255, 0.9);
   position: absolute;
   z-index: 2;
   bottom: 0;
   right: 0;
   padding: 1.5rem 2.5rem;
-  width: 50%;
+  width: 55%;
 }
+
+.heroText h1{font-size: 40px;}
+.heroText h1 div{margin: 0 10px}
 
 .contact-phone {
   font-weight: var(--font-weight-semibold);
@@ -427,6 +466,11 @@ strong {
   color: var(--dark-color);
 }
 
+.nav-spacer{
+ margin-left: 18vw;
+ display: flex;
+}
+
 .nav-link:focus {
   color: var(--p-color);
 }
@@ -497,42 +541,6 @@ strong {
   top: 8px;
 }
 
-/*---------------------------------------
-  TIMELINE               
------------------------------------------*/
-
-/*.serviceTab{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-}
-
-.servis{
-  position: relative;
-  background-color: var(--dark-color);
-  border-radius: 15px;
-}
-
-.serviceTab img{
-  border-radius: 15px;
-  width: 100%;
-  opacity: 0.2;
-}
-
-.serviceTab h3{
-  top: calc(100% / 2);
-  left: calc(100% / 4);
-  z-index: 3;
-  position: absolute;
-}
-
-
-
-*/
-/*.all-services{
-
-}*/
-
 
 .service{
   margin: 50px 0;
@@ -576,26 +584,7 @@ strong {
   order: 3;
   /*padding: 10px 15px;*/
 }
-/*.service{
-  display: flex;
-  column-gap: 1em;
-}
 
-.service img{
-  border-radius: 10px;
-  order: 1;
-  width: 50%
-}
-
-.service h3{
-  background-color: var(--dark-color);
-  order: 2
-}
-
-.service p{
-  order: 3
-}
-*/
 
 
 .timeline,
@@ -714,18 +703,49 @@ strong {
 
 @media (max-width: 767px) {
 
+#about {
+  position: static;
+}
+
+#about #doc-statement{order: 3;}
+#about .row img{
+  margin:0 20px 20px;
+  width:  80%;
+  border-radius: 50%;
+  position: static;
+  order: 1;
+}
+
+  .logoFont span{
+    font-size: 22px !important;
+  }
+
+.heroText h1 {font-size: 30px }
+.heroText h1 div{margin: 0 }
+
+/* #anim-Text {
+  font-size: 35px
+}
+*/
+
+#doc-Title{font-size: 25px !important}
   /* phone*/
 .service{
   display: flex;
   flex-direction: column;
+  grid-gap: 0;
   border-radius: 15px;
   margin: 10px 0;
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
 }
 
+.service:nth-child(even) img{
+  border-radius: 0;
+}
+
 .service img{
   order: 2;
-  border-radius: 0
+  border-radius: 0;
 }
 
 .service h3{
@@ -832,6 +852,23 @@ strong {
     line-height: 70px;
   }
 }
+
+/*galler ------------------------------------*/
+
+.gallery-img{
+  position: relative;
+}
+.gallery-img h5{
+  position: absolute;
+  font-size: 18px;
+  bottom: 3%;
+  left: 5%;
+  color: #fff;
+}
+
+/* ------------------------------------*/
+
+
 
 /*---------------------------------------
   REVIEWS               
@@ -961,12 +998,25 @@ strong {
   font-size: var(--menu-font-size);
 }
 
+.site-footer p, h5{
+  color: var(--white-color)
+}
+.site-footer h5, #mail a{
+  color: yellow !important
+}
+
+#mail{color: var(--white-color)}
+
 /*---------------------------------------
   SOCIAL ICON               
 -----------------------------------------*/
 .social-icon {
   margin: 0;
   padding: 0;
+}
+
+.social-icon-link{
+  color: var(--white-color)
 }
 
 .social-icon li {
@@ -990,7 +1040,7 @@ strong {
 }
 
 .social-icon-link:hover {
-  color: var(--primary-color);
+  color: yellow;
 }
 
 /*---------------------------------------
@@ -1066,14 +1116,19 @@ strong {
 }
 
 @media screen and (max-width: 767px) {
-  .heroText {
-    padding: 1.5rem;
-  }
 
-  .animated-info {
-    min-width: 125px;
-  }
 
+.gallery-img h5{
+  position: static;
+  font-size: 15px;
+  color: var(--dark-color);
+  padding: 0 5px 0;
+}
+
+
+ 
+
+ 
   .featured-circle {
     margin-top: 20px;
   }
@@ -1109,7 +1164,7 @@ strong {
   }
 
   .contact-phone {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
