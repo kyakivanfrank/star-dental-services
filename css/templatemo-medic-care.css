@@ -24,6 +24,12 @@
     transform: translateY(0px);
   }
 }
+.note{
+  color: darkgreen;
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+}
 
 section:visited {
   animation-name: showup;
