@@ -396,7 +396,7 @@ function pickKeys(keys, id){
  data[id] = `${keys}`
  const realTime = `${time.toLocaleTimeString()} ${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}`
  data[5] = realTime
-data[6] = `https://wa.me/256709473061?text=Patient%20from%20%20%22stardentalservices.com%22%0AMessage%20sent%3a%20%0A%0AName%3a%20{data[0]}%20$%0AEmail%3a%20${data[2]}Phone%20number%3a%20${data[1]}Appointment%20date%3a%20${data[3]}%0A%0A${data[4]}%0A%0ANB%3a%20please%20get%20more%20clarification%20from%20the%20sender%20about%20the%20appointments`
+data[6] = `https://wa.me/256709473061?text=%60%60%60this%20is%20an%20automatic%20message%20from%20stardentalservices.com%60%60%60%0Asent%20on%20${data[5]}%0A%0Apatient%20name%3a%20*${data[0]}*%20%0Aemail%3a%20*${data[2]}*%0Aphone%20number%3a%20*${data[1]}*%0Aappointment%20date%3a%20*${data[3]}*%0A%0A%0A*${data[4]}*%0A%0A_nb%3a%20please%20get%20more%20clarification%20from%20the%20sender%20about%20the%20appointments_`
 
 }
 
