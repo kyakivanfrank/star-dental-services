@@ -390,14 +390,14 @@ width="100%" height="400" style="border:23px;" allowfullscreen="none" loading="l
 
 <script>
 
-const data = [{ name: "" },{ phone : ""},{ email: ""}, {date: ""},{ message: ""}]
+const data = [{ name: "" },{ phone : ""},{ email: ""}, {date: ""},{ message: ""}, { datetime: ""},{ link: ""}]
 
 function pickKeys(keys, id){
  var time = new Date()
  data[id] = `${keys}`
  const realTime = `${time.toLocaleTimeString()} ${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}`
  data[5] = realTime
-data[6] = `https://wa.me/256703898152?text=%60%60%60this%20is%20an%20automatic%20message%20from%20stardentalservices.com%60%60%60%0Asent%20on%20${data[5]}%0A%0Apatient%20name%3a%20*${data[0]}*%20%0Aemail%3a%20*${data[2]}*%0Aphone%20number%3a%20*${data[1]}*%0Aappointment%20date%3a%20*${data[3]}*%0A%0A%0A*${data[4]}*%0A%0A_nb%3a%20please%20get%20more%20clarification%20from%20the%20sender%20about%20the%20appointments_`
+data[6] = `https://wa.me/256703898152?text=%60%60%60This%20is%20an%20automatic%20message%20from%20stardentalservices.com%60%60%60%0ASent%20on%20${data[5]}%0A%0APatient%20name%3a%20*${data[0]}*%20%0AEmail%3a%20*${data[1]}*%0APhone%20number%3a%20*${data[2]}*%0AAppointment%20date%3a%20*${data[3]}*%0A%0A%0A*${data[4]}*%0A%0A_NB%3a%20please%20get%20more%20clarification%20from%20the%20sender%20about%20the%20appointment_`
 
 }
 
